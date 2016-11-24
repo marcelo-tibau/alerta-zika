@@ -5,7 +5,27 @@ library("gbm")
 library("rpart")
 library("rpart.plot")
 library("RColorBrewer")
-library("rattle")
+library("NbClust")
+
+
+# K-mean clustering
+
+
+dataclustplot <- function(dazika, nc=15, seed=1527){
+  dataclust <- (nrow(dazika)-1)*sum(apply(dazika,2,var))
+  for (i in 2:nc){
+    set.seed(seed)
+    dataclust[i] <- sum(kmeans(dazika, centers=i)$withinss)}
+  plot(1:nc, wss, type="b", xlab="Number of Clusters",
+       ylab="Within groups sum of squares")}
+
+dataclustplot(dazika)
+
+set.seed(1527)
+nc <- NbClust(dazika, min.nc = 2, max.nc = 15, method = "kmeans")
+
+
+
 
 inTrain <- createDataPartition(y=dazika$NM_DISEASE, p=0.7, list=FALSE)
 training <- dazika[inTrain, ]
