@@ -1,11 +1,6 @@
 dazika <- read.csv2("Disease.csv")
 
 library("caret")
-library("gbm")
-library("rpart")
-library("rpart.plot")
-library("RColorBrewer")
-library("NbClust")
 library("geosphere")
 
 # Partitioning
