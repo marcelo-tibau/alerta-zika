@@ -9,6 +9,7 @@ Alerta Zika! é um evento colaborativo para explorar o potencial dos dados e da 
 
 Dados podem ser encontrados em http://alerta-zika.org/catalogo-de-dados/
 
+### The Project
 _Objective:_ create a Rio de Janeiro map with a historical evolution of the Zika disease throughout time and temperature, including IDH (human development indicators) as social parameter.
 
 _Target variable:_ the coordinates (latitude and longitude), the dates that the cases occured, the temperature over the seasons and social development indicators of Rio regarding income, education level and longevity. 
