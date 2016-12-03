@@ -22,6 +22,12 @@ write.csv(dwrj_2016, file = "rj_weather_2016.csv")
 
 dat1 <- read.csv("rj_weather_2016.csv")
 
+dat2 <- read.csv("rj_weather_2015.csv")
+
+dezembro_2015 <- subset(dat2, Month == "Dezembro", select = c(data_dia, temp_min, temp_max, temp_med))
+
+write.csv(dezembro_2015, file = "dezembro_2015.csv")
+
 idh_rio_reg <- read.csv("RM-63300-Rio-de-Janeiro-Base-REGIONAL-2000_2010.csv")
 
 idh_rio_reg_var <- subset(idh_rio_reg, select = c(NOME_REG, ANO, ESPVIDA, IDHM, IDHM_E, IDHM_L, IDHM_R))
