@@ -44,6 +44,10 @@ idh_rio_coord_data <- subset(idh_rio_coord, select = c(NOME_REG, IDHM, LONGITUDE
 
 write.csv(idh_rio_coord_data, file = "idh_rio_coord_data.csv")
 
+
+fit <- lm(NM_DISEASE ~ ID_AGRAVO + DT_TRANSSM, data = dazika)
+abline(fit, pch = 16, cex = 1.3, col = "blue", main = "LINEAR REGRESSION ")
+
 geo_dist <- function(dfzika) {
   require(geosphere)
   d <- function(i, z){
